@@ -1,0 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap');
+@function gradient($deg){
+    @return linear-gradient($deg, #30cfd0 0%, #330867 100%);
+}

@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import Academic from './components/Academic';
+import Details from './components/Details';
+import Image from './components/Image';
+import Work from './components/Work';
+import Name from './components/Name';
+import Skills from './components/Skills';
+import Lang from './components/Languages';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+  constructor(){
+    super();
+    this.download = React.createRef();
+  }
+  downloadCV(e){
+    e.preventDefault();
+  }
+  render(){  
+    return (
+      <div className="CV" ref = {this.download}>
+        <h1 className = 'center'>Curriculum Vitae</h1>
+        <Name />
+        <Academic/>
+        <Details/>
+        <Image />
+        <Work />
+        <Skills />
+        <Lang />
+        <button id = 'download' onClick = {this.downloadCV}>Download</button>
+      </div>
+    );
+  }
 }
 
 export default App;
